@@ -8,14 +8,38 @@ function onAddButtonClick(e) {
     }
     listIndex += 1;
     let div = document.getElementById("listArea");
+    if(div.childNodes.length === 0) {
+        listIndex = 1;
+    }
     let textElement = document.createTextNode("List Item " + listIndex + ": " + text);
     let breakTag = document.createElement("br");
-    div.appendChild(textElement);
-    div.appendChild(breakTag);
-   }
+    let item = document.createElement("item");
+    item.appendChild(textElement);
+    item.appendChild(breakTag);
+    div.appendChild(item);
+}
+
+function onClearButtonClick(e) {
+    let div = document.getElementById("listArea");
+    while(div.childNodes.length > 0) {
+        div.removeChild(div.lastChild);
+    }
+    listIndex = 0;
+}
+
+function onDoubleClick(e) {
+    e.target.parentNode.removeChild(e.target);
+}
 
 document.addEventListener("DOMContentLoaded", function() {
     let addButton = document.getElementById("addButton");
+    let clearButton = document.getElementById("clearButton");
+    let div = document.getElementById("listArea");
+
     addButton.addEventListener("click", onAddButtonClick);
+    clearButton.addEventListener("click", onClearButtonClick);
+    
+    div.addEventListener("dblclick", onDoubleClick);
+    
 });
 
