@@ -1,11 +1,13 @@
 h1 {
-    font-weight: 100;
+    font-family: sans-serif;
+    font-weight: 400;
     font-size: 26px;
     margin-top: 0px;
     margin-bottom: 4px;
 }
 .button {
     color: black;
+    font-family: sans-serif;
 }
 
 .app {
@@ -13,17 +15,24 @@ h1 {
     width: 400px;
     height: 300px;
     margin-top: 100px;
-    margin-left: 100px;
+    margin-left: auto;
+    margin-right: auto;
     padding: 50px;
     border-radius: 20px;
+    overflow-y: auto;
 }
 
 .listArea {
+    font-family: sans-serif;
     padding-left: 6px;
     font-size: 16px;
     padding-top: 6px;
 }
 
 body {
-    background-color: black;
+    background-image: linear-gradient(to right, red , yellow);
+}
+
+.completed {
+    text-decoration: line-through;
 }

@@ -28,7 +28,11 @@ function onClearButtonClick(e) {
 }
 
 function onDoubleClick(e) {
-    e.target.parentNode.removeChild(e.target);
+    if (e.target.classList.contains("completed")) {
+        e.target.classList.remove("completed"); 
+    } else {
+        e.target.classList.add("completed");
+    }
 }
 
 document.addEventListener("DOMContentLoaded", function() {
